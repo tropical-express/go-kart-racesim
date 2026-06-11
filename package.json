@@ -1,0 +1,45 @@
+{
+  "name": "go-kart-racesim",
+  "version": "0.1.0",
+  "description": "2D Kart Racing Game",
+  "main": "electron-main.js",
+  "type": "module",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^39.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.gokartracesim.app",
+    "productName": "Go Kart Racesim",
+
+    "directories": {
+      "output": "dist"
+    },
+
+    "files": [
+      "**/*",
+      "!dist/**/*",
+      "!.git/**/*",
+      "!.github/**/*"
+    ],
+
+    "asar": true,
+
+    "win": {
+      "target": [
+        "nsis"
+        ]
+    },
+
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
